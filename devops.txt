@@ -37,18 +37,23 @@ Kubernetes: ( minikube )
    - rollback
    - probes
 
+   ex: https://github.com/madhukamesh/Devops/tree/main/k8s
+
 Versio control system:
     - Github
 
 Continous Integration:
    - Github Action
 
+   ex: https://github.com/madhukamesh/vuejs-demo/blob/main/.github/workflows/vuejs-demo.yaml
+
 Continous Delivery:
  - Gitops concepts
  - Argocd 
 
  my project:
-    -
+    - https://github.com/madhukamesh/angular_new
+    - https://github.com/madhukamesh/angular_new_gitops
 
 
 Todo: ( In progress to learn concepts )
