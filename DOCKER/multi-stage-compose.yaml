@@ -1,0 +1,8 @@
+name: multi-stage
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: multi-stage.dockerfile
+      target: run-stage

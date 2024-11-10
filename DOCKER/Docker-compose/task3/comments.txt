@@ -1,0 +1,14 @@
+create two network network_one and network_two
+    - docker network create network_one(network name)
+    - docker network create network_two(network name)
+
+create container and connect with network
+    - docker run --network=network_one --name=c1 nginx:alpine 
+    - docker run --network=network_two --name=c2 nginx:alpine
+    - docker run --network=network_one --network=network_two --name=c3 nginx:alpine
+
+to exec the container by using curl and too check container connect with the network
+    - docker inspect network-name
+    - docker container ps (to get the conatainer name or container id)
+    - docker exec -it container name/container id /bin/sh
+    - curl -X GET "localhost:80(container port)"

@@ -1,0 +1,12 @@
+name: task2-complete
+
+services:
+ c1:
+  image: nginx:alpine
+  ports: 
+   - '8080:80'
+  networks:
+   - network_one
+
+networks:
+ network_one:

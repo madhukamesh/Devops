@@ -1,0 +1,5 @@
+docker run -v sample-volume:/usr/share/nginx/html --network=sample-network-one --name=c1 nginx:alpine 
+docker run -v sample-volume:/usr/share/nginx/html--network=sample-network-one --name=c2 nginx:alpine 
+docker run --network=sample-network-one --name=c3 nginx:alpine 
+docker volume create sample_volume
+docker network create network_one_task

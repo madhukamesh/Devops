@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-flask-deployment
+  labels:
+    app: sample-flask
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sample-flask
+  template:
+    metadata:
+      labels:
+        app: sample-flask
+    spec:
+      containers:
+      - name: sample-app
+        image: sample-flask-app:v1
+        ports:
+        - containerPort: 8081
+        startupProbe:
+          httpGet:
+            path: /probes/startup
+            port: 8081
+          failureThreshold: 30
+          periodSeconds: 2
+        livenessProbe:
+          httpGet:
+            path: /probes/unknown-path
+            port: 8081
+          failureThreshold: 3 # how many times retry should fail consequently before restarting container
+          periodSeconds: 5 # How often the probes should be called in interval
+        readinessProbe: 
+          httpGet:
+            path: /probes/readiness
+            port: 8081
+          failureThreshold: 5
+          periodSeconds: 5

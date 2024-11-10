@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hpa-deployment-demo
+  labels:
+    app: nginx-hpa-demo
+spec:
+  selector:
+    matchLabels:
+      app: sample
+  template:
+    metadata:
+      labels:
+        app: sample
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
+
+        resources:
+          limits: # maximum requirements
+            cpu: "150m"
+            memory: "150Mi" # if memory usage crossess this limit it will get crashed immediately
+          requests: # minimum requirements
+            cpu: "50m" # 1cpu => 1000m millicores
+            memory: "50Mi" #Mi = mb

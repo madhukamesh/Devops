@@ -1,0 +1,3 @@
+# Run the bind mount with port and with image nginx:alpine:
+
+       docker run -p 9001:80 -v ./:/usr/share/nginx/html nginx:alpine

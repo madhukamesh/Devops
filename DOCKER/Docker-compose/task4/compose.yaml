@@ -1,0 +1,11 @@
+name: task4-complete
+
+services:
+ app: 
+  image: nginx:alpine
+
+  volumes:
+   - sample-volume:/usr/share/nginx/html
+
+volumes:
+ sample-volume:

@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sample-config-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+       app: nginx
+    spec:
+
+     volumes:
+      - name: config-sample-volume
+        configMap:
+         name: my-sample-config
+
+     containers:
+     - name: nginx
+       image: nginx:alpine
+
+       env:
+        - name: age
+          value: "35"
+          
+        - name: sex
+          value: "male"
+
+        - name: husband
+          value: "kamesh"
+
+        - name: Employee-details
+          valueFrom: 
+           configMapKeyRef:
+            name: my-sample-config
+            key: Employee_Name 
+
+        - name: sample-programs
+          valueFrom:
+           configMapKeyRef:
+            name: my-sample-config
+            key: index.html             
+
+       volumeMounts:
+        - name: config-sample-volume
+          mountPath: /usr/share/nginx/html
+
+       ports:      
+        - containerPort: 80

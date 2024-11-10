@@ -1,0 +1,27 @@
+name: task1_compose
+
+services:
+  c1:
+    image: nginx:alpine
+    volumes:
+     - ./c1.html:/usr/share/nginx/html/index.html
+    networks:
+     - network_one_task1
+
+  c2:
+    image: nginx:alpine
+    volumes:
+     - ./c2.html:/usr/share/nginx/html/index.html
+    networks:
+     - network_one_task1
+
+  c3:
+    image: nginx:alpine
+    networks:
+     - network_one_task1
+
+volumes:
+ sample_volume:
+
+networks:
+ network_one_task1:

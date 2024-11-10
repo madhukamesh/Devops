@@ -1,0 +1,5 @@
+name: task1-compose 
+
+services: 
+ app:
+  image: hello-world

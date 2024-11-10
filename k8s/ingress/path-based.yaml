@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: path-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /payment # change 
+        pathType: Prefix
+        backend:
+          service:
+            name: service1 # change
+            port:
+              number: 3000 # connect to service port
+
+  - http:
+      paths:
+      - path: /boost-biscuit # change 
+        pathType: Prefix
+        backend:
+          service:
+            name: service1 # change
+            port:
+              number: 3000 # connect to service port

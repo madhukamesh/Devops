@@ -1,0 +1,14 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sample-echo-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: linux-alpine
+        image: alpine:latest
+        command: ["echo", "Hello, Kubernetes!"]
+      restartPolicy: Never
+  backoffLimit: 2 # Number of retries before considering a Job as failed
+  completions: 1 # Number of Pods that should be created by this Job

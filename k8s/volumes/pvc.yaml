@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc-demo
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany # match the access mode in pv
+  resources:
+    requests:
+      storage: 250Mi # match the storage size in pv

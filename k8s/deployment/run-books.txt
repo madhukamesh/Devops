@@ -1,0 +1,10 @@
+kubectl get deploy  (to show running deplyement)
+kebectl get rs  (to show running rs - replicaset)
+kubectl apply -f <filename.yaml> to create deployment
+kubectl describe deploy <deploy-name>
+kubectl api-resources
+kubectl get all
+kubectl get deploy -o wide ( to get more informatio )
+kubectl get pod -w  ( to watch the pods )
+kubectl delete deploy <deployment-name>
+kubectl apply -f . ( to apply all yamls in current directory)

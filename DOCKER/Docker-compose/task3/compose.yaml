@@ -1,0 +1,28 @@
+name: task3-complete
+
+services:
+ c1:
+  image: nginx:alpine
+  ports:
+   - '9000:80'
+  networks:
+    - network_one 
+
+ c2:
+  image: nginx:alpine
+  ports:
+    - '9001:80'
+  networks:
+    - network_two
+
+ c3:
+  image: nginx:alpine
+  ports:
+    - '9002:80'
+  networks:
+   - network_one 
+   - network_two
+
+networks:
+ network_one:
+ network_two:

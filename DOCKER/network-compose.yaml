@@ -1,0 +1,42 @@
+name: network-compose-example
+
+services:
+  c1:
+    image: nginx:alpine
+    volumes:
+      - ./c1.html:/usr/share/nginx/html/index.html
+    networks:
+      - network_one
+
+  c2:
+    image: nginx:alpine
+    volumes:
+      - ./c2.html:/usr/share/nginx/html/index.html
+    networks:
+      - network_one
+
+  c3:
+    image: nginx:alpine
+    volumes:
+      - ./c3.html:/usr/share/nginx/html/index.html
+    networks:
+      - network_two
+
+  c4:
+    image: nginx:alpine
+    volumes:
+      - ./c4.html:/usr/share/nginx/html/index.html
+    networks:
+      - network_two
+
+  c5:
+    image: nginx:alpine
+    volumes:
+      - ./c5.html:/usr/share/nginx/html/index.html
+    networks:
+      - network_one
+      - network_two
+
+networks:
+  network_one:
+  network_two:

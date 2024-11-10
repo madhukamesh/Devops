@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service1
+spec:
+  selector:
+    app: nginx
+  ports:
+    - port: 3000
+      targetPort: 80 # target port conntects to containerPort of deployment
+      name: http

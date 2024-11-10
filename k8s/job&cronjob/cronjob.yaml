@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "*/2 * * * *" # Every 2 mins
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: linux-alpine
+            image: alpine:latest
+            command: ["echo", "Hello, Kubernetes!"]
+          restartPolicy: Never
+      backoffLimit: 2 # Number of retries before considering a Job as failed
+      completions: 1 # Number of Pods that should be created by this Job

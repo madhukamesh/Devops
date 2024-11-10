@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginx-demo-ds
+spec:
+  selector:
+    matchLabels:
+      name: nginx-demo-ds
+  template:
+    metadata:
+      labels:
+        name: nginx-demo-ds
+    spec:
+      containers:
+      - name: nginx
+        image: busybox:latest
+        command:
+          - "sleep"
+          - "3600"

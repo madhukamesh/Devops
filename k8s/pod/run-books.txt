@@ -1,0 +1,19 @@
+Before start all we have to check with minikube
+minikube start
+minikube stop
+Basic:
+kubectl get <kind> (to list the running kind)
+kubectl delete <kind> <kind-name> (to delete kind)
+kubectl describe <kind> <kind-name> (to check the information about the kind)
+kubectl logs <kind>/<kind-name>  (to check the container logs (it use to debug when running the container))
+kubectl apply -f <file-name-yaml>  (to create kind)
+kubectl delete -f <file-name-yaml>  (to delete kind)
+kubectl delete -f .  (to delete all kinds in current directory) 
+kubectl apply -f .   (to create all kinds in current dirctory)
+
+
+Pod:
+kubectl get pods or kubectl get po
+kubectl apply -f example-one.yaml
+kubectl delete -f example-one.yaml
+kubectl delete Pod example

@@ -1,0 +1,10 @@
+name: task5-complete
+
+secrets:
+ app:
+  image: nginx:alpine
+  ports:
+   - '9001:80'
+  volumes:
+   - ./:/usr/share/nginx/html
+    

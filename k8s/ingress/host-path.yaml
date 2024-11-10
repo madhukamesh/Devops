@@ -1,0 +1,47 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: host-and-path-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: payment.oneeyes.com # mail.google.com
+    http:
+      paths:
+      - path: /v1
+        pathType: Prefix
+        backend:
+          service:
+            name: service1
+            port:
+              number: 3000 # connect to service port
+      
+      - path: /v2
+        pathType: Prefix
+        backend:
+          service:
+            name: service1
+            port:
+              number: 3000 # connect to service port
+
+  - host: addtocart.oneeyes.com # drive.google.com
+    http:
+      paths:
+      - path: /v1
+        pathType: Prefix
+        backend:
+          service:
+            name: service1
+            port:
+              number: 3000 # connect to service port
+      
+      - path: /v2
+        pathType: Prefix
+        backend:
+          service:
+            name: service1
+            port:
+              number: 3000 # connect to service port
+      
+

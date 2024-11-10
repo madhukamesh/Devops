@@ -1,0 +1,7 @@
+name: sample-build-1
+
+services:
+ app: 
+  build: 
+   context: .
+  

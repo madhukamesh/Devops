@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-sample-config
+data:
+  # Key-value pairs
+  Employee_Name: "Kamesh"
+  Employee_ID : "5862"
+  Gender : "Male"
+
+  Salary.details: |
+   Net.salary = 38000
+   Gross.salary =46500
+
+  Employee.Insurance: |
+   HealthInsurance= 1 upto 3 lakh
+
+  index.html: |
+    <html>
+      <head>
+        <title>Welcome to nginx!</title>
+      </head>
+      <body>
+        <h1>Sample ConfigMap</h1>
+        <p>Can you see this text?</p>
+      </body>
+    </html>   

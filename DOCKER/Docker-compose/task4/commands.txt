@@ -1,0 +1,6 @@
+#create volume and run named volume with with nginx image :
+         
+         docker volume create sample-volume
+         
+         docker run -v sample-volume:/usr/share/nginx/html nginx:alpine
+

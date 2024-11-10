@@ -1,0 +1,17 @@
+### CronJob
+- CronJob uses job as inputs template
+- Difference between job and cron is, cron exeuctes the job at specified time gain, again based on `schedule` field
+
+step 1: Deploy job to cluster
+`kubectl apply -f .`
+
+step 2: see the status
+`watch -n 1 'kubectl get all'`
+
+step 3: verify the logs after completed
+`kubectl logs pod/pod-name`
+
+
+Extra:
+    - website: https://crontab.guru/#*/2_*_*_*_*
+    
